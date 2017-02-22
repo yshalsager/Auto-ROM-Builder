@@ -10,8 +10,7 @@ sudo apt-get install -y git-core gnupg flex bison gperf build-essential
 # Install Java
 sudo add-apt-repository -y ppa:openjdk-r/ppa && sudo apt-get update && sudo apt-get install openjdk-7-jdk
 # Install repo
-sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
-mkdir ~/bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
 echo "export USE_CCACHE=1" >> ~/.bashrc
 echo "export PATH=~/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc

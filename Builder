@@ -17,9 +17,9 @@ source ~/.bashrc
 # Perpairing source
 mkdir ~/android && cd ~/android
 # ROM Repo
-repo init -u git://github.com/SlimRoms/platform_manifest.git -b kk4.4
+repo init -u git://github.com/LineageOS/android.git -b cm-11.0
 # Local Manifests
 curl -L -o .repo/local_manifests/normandykk.xml -O -L https://github.com/yshalsager/CircleCI-ROM-Builder/raw/master/normandykk.xml
-repo sync
+ repo sync >log 2>&1
 . build/envsetup.sh
 brunch xl

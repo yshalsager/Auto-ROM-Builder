@@ -1,0 +1,21 @@
+# Install build tools
+sudo apt-get install -y lzop git git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev lib32z1-dev libncurses5-dev libgl1-mesa-dri-lts-utopic:i386 libglapi-mesa-lts-utopic:i386 zlib1g-dev:i386 gcc-multilib g++-multilib libc6-dev libc6-dev-i386 lib32bz2-1.0 lib32ncurses5-dev libreadline6-dev:i386 libreadline6-dev x11proto-core-dev libx11-dev libx11-dev:i386 lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip maven automake python-networkx bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev libgl1-mesa-glx-lts-utopic:i386 libgl1-mesa-dev-lts-utopic squashfs-tools pngcrush dpkg-dev liblz4-tool make schedtool optipng mingw32 tofrodos python-markdown lib32readline-gplv2-dev lib32bz2-dev
+# Install Java
+sudo apt-get purge openjdk-\* icedtea-\* icedtea6-\*
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt-get update && sudo apt-get install -y oracle-java6-installer
+# Install repo
+sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+mkdir ~/bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+echo "export USE_CCACHE=1" >> ~/.bashrc
+echo "export PATH=~/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc
+# Perpairing source
+mkdir ~/android && cd ~/android
+# ROM Repo
+repo init -u git://github.com/SlimRoms/platform_manifest.git -b kk4.4
+# Local Manifests
+curl -L -o .repo/local_manifests/normandykk.xml -O -L https://github.com/yshalsager/CircleCI-ROM-Builder/raw/normandykk.xml
+repo sync
+. build/envsetup.sh
+brunch xl

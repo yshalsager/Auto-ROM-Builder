@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="github" fetch="git://github.com/" />
+  
+  <remove-project name="hardware/ril" />
+  <remove-project name="bootable/recovery" />
+<!-- Normandy Kernel -->
+  <project name="Nokia-xl-legacy/android_kernel_nokia_msm8625" path="kernel/nokia/normandy" remote="github" revision="cm-11.0" />
+<!-- Normandy Device -->
+  <project name="Nokia-xl-legacy/device_xl" path="device/nokia/xl" remote="github" revision="cm-11.0" />
+<!-- Normandy Vendor -->
+  <project name="Nokia-xl-legacy/vendor_xl" path="vendor/nokia"  remote="github" revision="cm-11.0" />
+<!-- Twrp -->
+  <project name="omnirom/android_bootable_recovery" path="bootable/recovery" remote="github" revision="android-5.1"/>
+<!-- Hardwares -->
+  <project name="Nokia-xl-legacy/hardware_ril" path="hardware/ril" remote="github" revision="cm-11.0"/>
+  <project name="Nokia-xl-legacy/android_hardware_qcom_gps" path="hardware/qcom/gps" remote="github" revision="kitkat"/>
+  <project name="Nokia-xl-legacy/android_hardware_qcom_media-legacy" path="hardware/qcom/media-legacy" remote="github" revision="kitkat"/>
+  <project name="Nokia-xl-legacy/android_external_webkit" path="external/webkit" remote="github" revision="kitkat"/>
+  <project name="Nokia-xl-legacy/android_hardware_qcom_display-legacy" path="hardware/qcom/display-legacy" remote="github" revision="kitkat"/>
+  <project name="Nokia-xl-legacy//android_hardware_atheros_wlan" path="hardware/atheros/wlan" remote="github" revision="cm-11.0"/>
+  <project name="Nokia-xl-legacy/android_hardware_atheros_wifi_ath6kl-huawei" path="hardware/atheros/wifi" remote="github" revision="master"/>
+</manifest>

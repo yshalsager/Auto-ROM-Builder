@@ -16,6 +16,8 @@ echo "export PATH=~/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
 # Perpairing source
 mkdir ~/android && cd ~/android
+git config --global user.email "ysh-alsager.com"
+git config --global user.name "yshalsager"
 # ROM Repo
 repo init -u git://github.com/SlimRoms/platform_manifest.git -b kk4.4
 # Local Manifests

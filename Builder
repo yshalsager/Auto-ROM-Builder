@@ -22,7 +22,7 @@ repo init -u git://github.com/SlimRoms/platform_manifest.git -b kk4.4
 curl -L -o .repo/local_manifests/normandykk.xml -O -L https://github.com/yshalsager/CircleCI-ROM-Builder/raw/master/normandykk.xml
 repo sync
 # Edit device tree
-cd ~/android/device/nokia/xl && cp cm.mk slim.mk && rm cm.mk
+cd ~/android/device/nokia/xl && mv cm.mk slim.mk && rm cm.mk
 cd patches && chmod 775 apply.sh && ./apply.sh
 cd ~/android
 . build/envsetup.sh

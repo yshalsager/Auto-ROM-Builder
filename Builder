@@ -12,13 +12,11 @@ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/rep
 echo "export USE_CCACHE=1" >> ~/.bashrc
 echo "export PATH=~/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
-# Perpairing source
-mkdir ~/android && cd ~/android
-# ROM Repo
-repo init -u git://github.com/SlimRoms/platform_manifest.git -b kk4.4
-# Local Manifests
-curl -L -o .repo/local_manifests/normandykk.xml -O -L https://github.com/yshalsager/CircleCI-ROM-Builder/raw/master/normandykk.xml
-repo sync -c -j4 &> /dev/null
+# Prepair Compressed Source
+wget https://nl1.androidfilehost.com/dl/0ehoBmTX8MV3fMb7KeUA8Q/1488412447/24591000424963926/CyanogenMod-cm-11.0-no-repo-20160907.tar.xz
+tar -xvJf CyanogenMod-cm-11.0-no-repo-20160907.tar.xz &> log
+ls
+repo sync -l
 # Edit device tree
 cd ~/android/device/nokia/xl && mv cm.mk slim.mk && rm cm.mk
 cd patches && chmod 775 apply.sh && ./apply.sh

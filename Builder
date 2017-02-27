@@ -13,7 +13,7 @@ echo "export USE_CCACHE=1" >> ~/.bashrc
 echo "export PATH=~/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
 # Prepair Compressed Source
-wget https://nl1.androidfilehost.com/dl/0ehoBmTX8MV3fMb7KeUA8Q/1488412447/24591000424963926/CyanogenMod-cm-11.0-no-repo-20160907.tar.xz -O $HOME/CyanogenMod-cm-11.0-no-repo-20160907.tar.xz
+wget -q https://nl1.androidfilehost.com/dl/0ehoBmTX8MV3fMb7KeUA8Q/1488412447/24591000424963926/CyanogenMod-cm-11.0-no-repo-20160907.tar.xz
 tar -xvJf CyanogenMod-cm-11.0-no-repo-20160907.tar.xz &> /dev/null
 cd CyanogenMod-cm-11.0-no-repo-20160907
 repo sync -l &> /dev/null

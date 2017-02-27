@@ -1,7 +1,5 @@
 # Fix build
-sudo dpkg --configure -a
-sudo apt install -f
-sudo apt-get autoremove
+sudo dpkg --configure -a && sudo apt install -f && sudo apt-get autoremove &> /dev/null
 # Install build tools
 sudo apt-get install -y lzop git-core gnupg flex bison gperf build-essential zip
   curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev
@@ -16,9 +14,6 @@ echo "export PATH=~/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
 # Perpairing source
 mkdir ~/android && cd ~/android
-git config --global user.email "ysh-alsager.com"
-git config --global user.name "yshalsager"
-git config --global color.ui false
 # ROM Repo
 repo init -u git://github.com/SlimRoms/platform_manifest.git -b kk4.4
 # Local Manifests
